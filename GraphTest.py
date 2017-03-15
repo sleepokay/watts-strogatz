@@ -18,7 +18,7 @@ def main(script, n='1000', k='10', *args):
     l_zero = g.average_path_length()
     print c_zero, l_zero
 
-    f = open("plots/output2.csv", "wb")
+    f = open("plots/output.csv", "wb")
     print 'p\tC\tL'
     f.write('p,C(p)/C(0),L(p)/L(0)\n')
 
