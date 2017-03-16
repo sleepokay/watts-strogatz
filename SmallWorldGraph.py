@@ -27,11 +27,6 @@ class Fifo(object):
 class SmallWorldGraph(RandomGraph):
 
     def rewire(self, p):
-        """Precondition: graph must be regular"""
-        k = len(self.out_vertices(self.vertices()[0]))
-        for v in self:
-            if len(self.out_vertices(v)) != k:
-                return
 
         #rewire edges
         for v in self:
@@ -78,6 +73,6 @@ class SmallWorldGraph(RandomGraph):
                         queue.append(w)
                         path_lengths[w] = path_lengths[current_node] + 1
 
-            average += sum(path_lengths.values()) / (len(self.vertices())-1)
+            average += sum(path_lengths.values()) / (len(self.vertices()))
 
         return average / len(self.vertices())
