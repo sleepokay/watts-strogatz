@@ -10,6 +10,6 @@ Below is a plot of the clustering coefficient and average path length against th
 ![From this implementation](https://github.com/sleepokay/watts-strogatz/blob/master/media/plot.png)
 
 
-The plot from the Watts and Strogatz paper for reference:
+The plot from the Watts and Strogatz paper:
 
 ![From the paper by Watts & Strogatz](https://github.com/sleepokay/watts-strogatz/blob/master/media/ws.png)
