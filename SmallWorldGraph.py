@@ -3,7 +3,7 @@ import random
 from Graph import Vertex, Edge, Graph
 from RandomGraph import RandomGraph
 
-#Fifo based on Raymond Hettinger's recipe @http://code.active.state.com/recipes/68436
+# Fifo based on Raymond Hettinger's recipe @http://code.active.state.com/recipes/68436
 class Fifo(object):
 
     def __init__(self):
@@ -27,8 +27,6 @@ class Fifo(object):
 class SmallWorldGraph(RandomGraph):
 
     def rewire(self, p):
-
-        #rewire edges
         for v in self:
             for e in list(self.out_edges(v)):
                 if random.random() < p:
@@ -37,9 +35,9 @@ class SmallWorldGraph(RandomGraph):
                     self.remove_edge(e) #print 'Removing: %s' % [e]
 
 
-    #intuition: the clustering coefficient measures whether vertices connected to a vertex v are also connected to each other
-    #i.e. the "clique-ishness" of a group of vertices
-    #see Watts & Strogatz paper for details on calculation
+    # The clustering coefficient measures whether vertices connected to a vertex v are also connected to each other,
+    # i.e. the "clique-ishness" of a group of vertices.
+    # See Watts & Strogatz paper for details on calculations.
     def clustering_coefficient(self):
         cc = 0.0
         for v in self.vertices():
@@ -54,9 +52,9 @@ class SmallWorldGraph(RandomGraph):
                 cc += len(neighborhood_edges) / num_possible_edges
         return cc / len(self.vertices())
 
-    #intuition: the average path length measures the length of the shortest path between two vertices
-    #averaged for all pairs of vertices
-    #this is achieved using Djikstra's shortest path algorithm
+    # The average path length measures the length of the shortest path between two vertices.
+    # We are averaging the length of the shortest paths between all pairs of vertices.
+    # This is calculated using Djikstra's shortest path algorithm.
     def average_path_length(self):       
         average = 0.0
 
